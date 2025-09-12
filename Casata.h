@@ -12,6 +12,10 @@ HO BISOGNO DI UN OGGETTO CASATA CHE RACCHIUDE TUTTI I NOBILI DELLO STESSO COGNOM
 OGNI VOLTA CHE UN NOBILE DELLA CASATA SI SPOSA DEVE AGGIORNARE LA FORZA DELLA SUA CASATA
 MA COME CAZZO LO TRADUCO IN C++?????
 
+ok quindi una casata e' un vettore di nobili (crea la classe) 
+
+ricordati di mettere un seed fissato in modo da riprodurre i risultati
+
 */
 
 
@@ -49,7 +53,7 @@ class Casata {
             double stddev = 1.5;
 
             random_device rd;
-            mt19937 gen(rd());
+            mt19937 gen(rd()); // questo devi fare in modo da passarlo per referenza dal main direi
 
             do {
                 normal_distribution<double> normal_dist(figliMedi, stddev);
