@@ -90,8 +90,8 @@ class Casata : public vector<Nobile*> {
             // Casa più bassa riceve un guadagno dato dalla funzione y2 = 1 + Delta/2
             // in questo modo l'ipergamia e' premiata e l'ipogamia e' leggermente penalizzata
             int Delta = this->getForzaCasa() - casaConiuge->getForzaCasa();
-            int forzaIpogamo = 1 - Delta / 4;
-            int forzaIpergamo = 1 + Delta / 2;
+            int forzaIpogamo = 1 - fabs(Delta) / 4;
+            int forzaIpergamo = 1 + fabs(Delta) / 2;
             if (Delta > 0) { // this > coniuge
                 this->addForzaParz(forzaIpogamo);
                 casaConiuge->addForzaParz(forzaIpergamo);
