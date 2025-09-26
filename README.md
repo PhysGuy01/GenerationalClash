@@ -97,8 +97,11 @@ This will read the output file `generations.out` and plot a graph of the strengh
 - Nobles from different houses are married to each other and they gain or lose strength through advantageous or disatvantageous marriages. \
     Hypergamy should be encouraged (house of the lower-class noble gains more strenght after marriage), hypogamy should be discouraged (house of higher-class noble gains less strenght after marrying a lower-class noble or even loses some if the marriage is especially disatvangeous).\
     The strength-gain of each house after a marriage is calculated by two functions:
-    $$\\ G_{hypergamy} = \frac{1}{2} \Delta + 1$$
-    $$\\ G_{hypogamy} = -\frac{1}{4} \Delta + 1$$
+
+    <img src="https://latex.codecogs.com/gif.latex?G_hypergamy = \frac{1}{4} \Delta + 1" />
+    
+    <img src="https://latex.codecogs.com/gif.latex?G_{hypogamy} = -\frac{1}{4} \Delta + 1" />
+
     This way, hypogamy is slightly discouraged and hypergamy is higly rewarded.
 
 ## License
