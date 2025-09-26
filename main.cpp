@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
 
 
     // Carica i nomi delle casate e crea un array
-    ifstream filenomi("nomi_casate.txt");
+    ifstream filenomi("houses_names.txt");
     listaCasate casate(nGenerazioni, gen);
 
     string nomex;
@@ -63,19 +63,6 @@ int main(int argc, char** argv) {
 
 
     casate.eseguiNgenerazioni();
-
-
-
-    // -----------------------------------------------------
-    //   Scrive su file i dati delle casate per plottarli
-    // -----------------------------------------------------
-
-    ofstream output("dati_casate.out");
-    for ( Casata* casa : casate ) {
-        output << casa->getCognome() << " " << casa->getForzaCasa() << " " << casa->size() << endl;
-    }
-
-    output.close();
 
 
     return 0;
