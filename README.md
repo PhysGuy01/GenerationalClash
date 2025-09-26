@@ -12,6 +12,7 @@
 - [Usage](#usage)
 - [File Structure](#file-structure)
 - [Notes](#notes)
+- [License](#license)
 - [Contributing](#contributing)
 
 
