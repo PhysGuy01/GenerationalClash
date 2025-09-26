@@ -1,3 +1,7 @@
+// -------------------------------------
+//      Author: Francesco Specchia
+// -------------------------------------
+
 #include <iostream>
 #include <fstream>
 #include <cmath>

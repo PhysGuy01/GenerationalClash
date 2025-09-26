@@ -1,3 +1,7 @@
+// -------------------------------------
+//      Author: Francesco Specchia
+// -------------------------------------
+
 #pragma once
 #include <random>
 #include <string>
@@ -86,7 +90,7 @@ class Casata : public vector<Nobile*> {
             Casata* casaPadre = (nob->getGender() ? this : casaConiuge);
 
 
-            // Casa piu' alta riceve un guadagno dato dalla funzione y1 = 1 - Delta/4 
+            // Casa più alta riceve un guadagno dato dalla funzione y1 = 1 - Delta/4 
             // Casa più bassa riceve un guadagno dato dalla funzione y2 = 1 + Delta/2
             // in questo modo l'ipergamia e' premiata e l'ipogamia e' leggermente penalizzata
             int Delta = this->getForzaCasa() - casaConiuge->getForzaCasa();
@@ -232,6 +236,5 @@ class listaCasate : public vector<Casata*> {
                 eseguiGenerazione();
             }
         }
-
 
 };

@@ -106,7 +106,6 @@ This will read the output file `generations.out` and plot a graph of the strengh
     ```
 
     Where Δ is the difference between the strenght of the two noble houses.
-    
     This way, hypogamy is slightly discouraged and hypergamy is higly rewarded.
 
 ## License
