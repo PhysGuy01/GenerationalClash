@@ -107,7 +107,7 @@ This will read the output file `generations.out` and plot a graph of the strengh
     ```
 
     Where Δ is the difference between the strenght of the two noble houses.
-    This way, hypogamy is slightly discouraged and hypergamy is higly rewarded.
+    This way, hypogamy is slightly discouraged and hypergamy is highly rewarded.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
@@ -120,7 +120,7 @@ to discuss what you would like to change.
 ___
 
 **Author**: Francesco Specchia \
-**Contact**: [franci.specchia@gmail.com](mailto:franci.specchia@gmail.com)
+**Contact**: [francesco.specchia@studenti.unimi.it](mailto:francesco.specchia@studenti.unimi.it)
 
 
 
