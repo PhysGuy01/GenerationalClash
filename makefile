@@ -1,7 +1,13 @@
+.PHONY = all compila clean
+
 all: compila
 
+main: main.cpp
+	g++ -c main.c -fsanitize=address -g
+
 compila: main.cpp
-	g++ -o fight main.cpp
+	rm -f generazioni.out
+	g++ main.cpp -o fight -fsanitize=address 
 
 clean: 
-	rm fight
+	rm -f fight dati_casate.out generazioni.out
