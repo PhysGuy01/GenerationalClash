@@ -100,7 +100,7 @@ This will read the output file `generations.out` and plot a graph of the strengh
     The strength-gain of each house after a marriage is calculated by two functions:
 
     ```math
-    G_{hypergamy} = \frac{1}{4} \Delta + 1
+    G_{hypergamy} = \frac{1}{2} \Delta + 1
     ```
     ```math
     G_{hypogamy} = -\frac{1}{4} \Delta + 1
