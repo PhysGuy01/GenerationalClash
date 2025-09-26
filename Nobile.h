@@ -17,17 +17,24 @@ class Nobile {
         int m_forzaNob;
         int m_nfigli;
         bool m_dasposare;
+        bool m_alreadyMarried;
 
         bool m_gender; // 0: femmina, 1: maschio
 
     public:
-        Nobile(int gender, bool dasposare) : m_gender(gender), m_dasposare(dasposare), m_nfigli(0) {}
+        Nobile(int gender, bool dasposare) : m_gender(gender), m_dasposare(dasposare), m_nfigli(0), m_alreadyMarried(false) {}
 
         void setFigli(int figli) { m_nfigli = figli; }
         int getFigli() const { return m_nfigli; }
 
         void setDaSposare(bool dasposare) { m_dasposare = dasposare; }
         bool getDaSposare() const { return m_dasposare; }
+
+        void setAlreadyMarried(bool married) {
+            setDaSposare(!married);
+            m_alreadyMarried = married;
+        }
+        bool getAlreadyMarried() const { return m_alreadyMarried; }
 
         bool getGender() const { return m_gender; }
 
@@ -82,8 +89,7 @@ class Casata : public vector<Nobile*> {
             }
         }       
 
-        // sposa un nobile con un'altro generando un numero di figli e assegnandoli alla casata del padre
-        // infine elimina i nobili genitori
+        // sposa un nobile con un altro generando un numero casuale di figli e assegnandoli alla casata del padre
         void honeymoon(Nobile* nob, Nobile* coniuge, Casata* casaConiuge) {
             nob->calcolaFigli(coniuge, m_gen);
 
@@ -113,17 +119,19 @@ class Casata : public vector<Nobile*> {
                 casaPadre->push_back(new Nobile(rand01, daNONsposare));
             }
 
-            coniuge->setDaSposare(false);
-            nob->setDaSposare(false);
+            coniuge->setAlreadyMarried(true);
+            nob->setAlreadyMarried(true);
+
             
         }
 
         // Setta dasposare = true in ogni nobile nel vettore Casata per la nuova generazione
-        // E uccide tutti i nobili che non si sono sposati nella scorsa generazione (lol)
+        // E uccide tutti i nobili che si sono gia' sposati
         void resetDaSposare() {
             auto it = begin();
             while (it != end()) {
-                if ((*it)->getFigli() > 0) {
+                // deletes all nobles that have married in the previous generation
+                if ((*it)->getAlreadyMarried()) { 
                     delete *it;
                     it = erase(it); // erase returns the next valid iterator
                 } else {
@@ -182,8 +190,8 @@ class listaCasate : public vector<Casata*> {
             return nob;
         }
 
-        Nobile* gayMarriage() {;} // yet to implement
-        Nobile* sweetHomeAlabama() {;} // Searches for a partner within the house of a given noble. Yet to implement
+        Nobile* gayMarriage() { return nullptr;} // yet to implement
+        Nobile* sweetHomeAlabama() { return nullptr; } // Searches for a partner within the house of a given noble. Yet to implement
 
         // Crea un ordinamento tra le classi per sortare i vettori
         static bool compPtr(const Casata* casa1, const Casata* casa2) {

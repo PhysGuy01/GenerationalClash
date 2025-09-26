@@ -27,10 +27,10 @@ inline void rtrim(string &s) {
 int main(int argc, char** argv) {
 
     if (argc < 4) {
-        cout << "Utilizzo: " << argv[0] << " <seed> <n_casate(max706)> <n_generazioni>" << endl;
+        cout << "Utilizzo: " << argv[0] << " <seed(32-bit)> <n_casate(max706)> <n_generazioni>" << endl;
         return -1;
     }
-    int seed = atoi(argv[1]);
+    unsigned long long int seed = atoi(argv[1]);
     mt19937 gen(seed);
 
     int nCasate = stoi(argv[2]);
@@ -64,6 +64,18 @@ int main(int argc, char** argv) {
     }
 
     filenomi.close();
+
+
+    // outputs data of the generation 0 (initial values)
+    fstream outgen;
+    outgen.open("generations.out", ios::app);
+    outgen << seed << endl;
+    outgen << 0 << endl; // gen = 0
+
+    for (Casata* casa : casate) 
+        outgen << casa->getCognome() << " " << casa->getForzaCasa() << " " << casa->size() << " " << 0 << endl;
+    
+    outgen.close();
 
 
     casate.eseguiNgenerazioni();

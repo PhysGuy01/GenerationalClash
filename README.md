@@ -53,7 +53,7 @@ g++ -std=c++17 -o fight main.cpp
 ./fight <seed> <n_houses> <n_generations>
 ```
 
-- `<seed>`: Random seed (integer)
+- `<seed>`: Random seed (32-bit integer)
 - `<n_houses>`: Number of houses (max: 705)
 - `<n_generations>`: Number of generations to simulate
 
