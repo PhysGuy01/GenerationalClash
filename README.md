@@ -2,7 +2,10 @@
 
 **GenerationalClash** is a C++ game/simulation project that models the evolution of noble houses ("casate") over multiple generations. It tracks the strength and population of each house, simulates marriages, and outputs data for visualization.
 
-![Example of output plot](example.png)
+Line plot                                |  Bar plot
+:---------------------------------------:|:-------------------------:
+<img src="example1.png" width="700"/>    |  <img src="example2.png" width="300"/> 
+
 
 
 #### Table of Contents
