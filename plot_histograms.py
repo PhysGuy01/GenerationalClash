@@ -11,8 +11,6 @@ list_of_int_lines = []
 
 loadCasate("generations.out", listaCasate, list_of_int_lines)
 
-
-# --- assume listaCasate is your list of Casata instances ---
 n_gen = listaCasate[0].getNgen()
 n_houses = len(listaCasate)
 
@@ -42,7 +40,7 @@ for gen_idx, ax in enumerate(axes):
     ax.grid(True, linestyle='--', linewidth=0.7, alpha=0.7)
 
 
-    # if you want to stack nobles on top of strengths use bottom=np.array(strengths) in p2
+    # if you dont want stacked nobles on top of strengths dont use bottom=np.array(strengths) in p2
     p1 = ax.bar(x, strengths, width, label='Strength', edgecolor='black', alpha=0.7)
     p2 = ax.bar(x, nobles, width, bottom=np.array(strengths), label='Nobles', edgecolor='black', alpha=0.7)
 
@@ -50,10 +48,10 @@ for gen_idx, ax in enumerate(axes):
     ax.set_xticklabels(labels, rotation=45, ha='right')
     ax.set_ylabel('Value')
     ax.yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
-    ax.set_title(f'Generazione {gen_idx}')
+    ax.set_title(f'Generation {gen_idx}')
     ax.legend()
 
-    # optional: label the stacked heights
+    # labeling stacked bars (don't ask how it works it just does)
     for xi, s, n in zip(x, strengths, nobles):
         ax.text(xi, s/2 if s!=0 else 0, f'{s}', ha='center', va='center', fontsize=8, color='white')
         ax.text(xi, s + n/2 if (s+n)!=0 else 0, f'{n}', ha='center', va='center', fontsize=8, color='white')
