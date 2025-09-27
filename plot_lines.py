@@ -51,5 +51,5 @@ for ax in axes[len(listaCasate):]:
 
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.suptitle("Evolution of noble houses with seed: " + str(list_of_integer_lines[0]), fontsize=16)
-plt.savefig("plot_lines.png", dpi=700)
+plt.savefig("line_plot.png", dpi=700)
 plt.show()

@@ -10,7 +10,7 @@ Line plot                                |  Bar plot
 
 #### Table of Contents
 
-- [Features](#features)
+- [Features](#features)v
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [File Structure](#file-structure)
@@ -27,7 +27,7 @@ Line plot                                |  Bar plot
 
 - Tracks and outputs the strength and number of members for each house per generation.
 
-- Provides a Python script (`plot.py`) to visualize the evolution of each house.
+- Provides two Python scripts (`plot_histograms.py` and `plot_lines.py`) to visualize the evolution of each house through generations.
 
 ## Requirements
 
@@ -78,18 +78,22 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Then run the plotting script:
+Then run the plotting scripts:
 
 ```sh
-python3 plot.py
+python3 plot_lines.py
+python3 plot_bars.py
 ```
 
-This will read the output file `generations.out` and plot a graph of the strenght and number of members through each generation and produce an image with the results.
+These will read the output file `generations.out` and plot graphs of the strenght and number of members through each generation and produce images with the results.
 
 ## File Structure
 - `main.cpp` : Main simulation driver. Once run it creates another file `generations.out` containing data generation for generation
 - `Nobile.h` : Header file of classes and logic
-- `plot.py` : Python script for visualization
+- `plot_bars.py` : Python script to visualize houses as bars of strength and number of members. One plot for each generation. \
+Great for simulations of a large number of houses and few generations.
+- `plot_lines.py` : Python script to visualize houses as lines of strength and number of members. One plot for each house. \
+Great for simulations of a large number of generations and few houses.
 - `houses_names.txt` : Contains 705 noble houses names inspired by british nobility
 - `makefile` : Makefile to compile the code and clean up the output files
 
@@ -99,7 +103,7 @@ This will read the output file `generations.out` and plot a graph of the strengh
 - The plotting script expects an output file so ensure to run the simulation before calling the script and that the file `generations.out` is present in the directory.
 
 - Nobles from different houses are married to each other and they gain or lose strength through advantageous or disatvantageous marriages. \
-    Hypergamy should be encouraged (house of the lower-class noble gains more strenght after marriage), hypogamy should be discouraged (house of higher-class noble gains less strenght after marrying a lower-class noble or even loses some if the marriage is especially disatvangeous).\
+    Hypergamy should be encouraged (house of the lower-class noble gains more strenght after marriage with a higher-class noble), hypogamy should be discouraged (house of higher-class noble gains less strenght after marrying a lower-class noble or even loses some if the marriage is especially disatvangeous).\
     The strength-gain of each house after a marriage is calculated by two functions:
 
     ```math

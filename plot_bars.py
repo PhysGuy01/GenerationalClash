@@ -59,5 +59,5 @@ for gen_idx, ax in enumerate(axes):
 
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.suptitle("Generations of noble houses with seed: " + str(list_of_int_lines[0]), fontsize=16)
-plt.savefig("plot_histo.png", dpi=700)
+plt.savefig("bar_plot.png", dpi=700)
 plt.show()
